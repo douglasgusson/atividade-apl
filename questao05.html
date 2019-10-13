@@ -1,0 +1,60 @@
+---
+layout: default
+title: Questão 05
+permalink: /questao-05/
+---
+<div class="row">        
+  <div class="input-field col s6">
+    <input id="periodo" name="periodo" type="number" class="validate">
+    <label for="periodo">Período</label>
+  </div>
+  <div class="input-field col s6">
+    <input id="demanda" name="demanda" type="text" class="validate">
+    <label for="demanda">Demanda</label>
+  </div>
+  <div class="col s12">            
+    <button class="btn waves-effect waves-light add">
+      Adicionar
+    </button>
+  </div>
+</div>
+<div class="row">
+  <table class="striped highlight responsive-table" id="tabelaPrevisao">
+    <thead>
+      <tr>
+          <th>Período (X)</th>
+          <th>Demanda (Y)</th>
+          <th>XY</th>
+          <th>X<sup>2</sup></th>
+          <th>Y<sup>2</sup></th>
+          <th>Previsão</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- BODY da tabela -->
+    </tbody>
+    <tfoot style="font-weight: bold">
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+  <div class="col s12"> 
+    <button class="btn waves-effect waves-light result">
+      Resultados
+    </button>          
+    <button class="btn waves-effect waves-light red clear">
+      Limpar
+    </button>
+  </div>
+</div>
+
+<div class="row">
+  <ul class="resultados">
+  </ul>
+</div>
