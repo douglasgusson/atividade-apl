@@ -1,0 +1,115 @@
+---
+layout: default
+title: Questão 04
+permalink: /questao-04/
+scritp_questao: 'questao04.js'
+---
+<div class="row">
+  <p>Preencha os campos em horas inteiras</p>
+</div>
+
+<div class="row">
+  <div class="input-field col s6">
+    <input id="unidadesPorHora" name="unidadesPorHora" type="number" class="validate">
+    <label for="unidadesPorHora">Unidades produzidas por hora</label>
+  </div>
+</div>
+
+<div class="row">    
+	<div class="input-field col s4">
+	  <select name="diaSemana" id="dias" class="browser-default">
+	    <option value="" disabled selected>Selecione</option>
+	    <option value="SEG">SEG</option>
+	    <option value="TER">TER</option>
+	    <option value="QUA">QUA</option>
+	    <option value="QUI">QUI</option>
+	    <option value="SEX">SEX</option>
+	    <option value="SAB">SAB</option>
+	    <option value="DOM">DOM</option>
+	  </select>
+	</div>    
+  <div class="input-field col s4">
+    <input id="quantTurnos" name="quantTurnos" type="number" class="validate">
+    <label for="quantTurnos">Quantidade de turnos</label>
+  </div>
+  <div class="input-field col s4">
+    <input id="duracaoTurno" name="duracaoTurno" type="number" class="validate">
+    <label for="duracaoTurno">Duração do turno</label>
+  </div>
+  <div class="col s12">            
+    <button class="btn waves-effect waves-light add">
+      Adicionar
+    </button>
+  </div>
+</div>
+
+<div class="row">
+  <ul id="ulTurnos"></ul>
+</div>
+
+<div class="row">
+  <div>
+    <p>Preenchar o tempo em horas inteiras</p>
+  </div>
+  
+  <div class="col s6">
+    <div class="row">
+      <h5>Perdas planejadas</h5>
+      <div class="input-field col s8">
+          <input id="descricaoPerdaPlanejada" name="descricaoPerdaPlanejada" type="text" value="Perda planejada" class="validate">
+          <label for="descricaoPerdaPlanejada">Descrição</label>
+        </div>
+      <div class="input-field col s4">
+        <input id="tempoPerdaPlanejada" name="tempoPerdaPlanejada" type="number" class="validate">
+        <label for="tempoPerdaPlanejada">Tempo</label>
+      </div>
+      <div class="col s12">            
+        <button class="btn waves-effect waves-light addPerdaPlanejada">
+          Adicionar
+        </button>
+      </div>
+      <div class="col s12">
+        <ul id="ulPerdasPlanejadas"></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s6">
+    <div class="row">
+      <h5>Perdas não planejadas</h5>
+      <div class="input-field col s8">
+          <input id="descricaoPerdaNaoPlanejada" name="descricaoPerdaNaoPlanejada" value="Perda não planejada" type="text" class="validate">
+          <label for="descricaoPerdaNaoPlanejada">Descrição</label>
+        </div>
+      <div class="input-field col s4">
+        <input id="tempoPerdaNaoPlanejada" name="tempoPerdaNaoPlanejada" type="number" class="validate">
+        <label for="tempoPerdaNaoPlanejada">Tempo</label>
+      </div>
+      <div class="col s12">            
+        <button class="btn waves-effect waves-light addPerdaNaoPlanejada">
+          Adicionar
+        </button>
+      </div>
+      <div class="col s12">
+        <ul id="ulPerdasNaoPlanejadas"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="col s12"> 
+    <button class="btn waves-effect waves-light result">
+      Resultados
+    </button>          
+    <button class="btn waves-effect waves-light red clear">
+      Limpar
+    </button>
+  </div>
+
+  <div class="row">
+    <ul id="ulResultados"></ul>
+  </div>
+
+</div>
