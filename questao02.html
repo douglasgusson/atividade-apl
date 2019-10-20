@@ -4,34 +4,100 @@ title: Questão 02
 permalink: /questao-02/
 scritp_questao: 'questao02.js'
 ---
+<div class="row">
+  <p>Preencha os campos em minutos.</p>
+</div>
 <div class="row">    
 	<div class="input-field col s3">
-	  <select class="browser-default">
+	  <select name="diaSemana" id="dias" class="browser-default">
 	    <option value="" disabled selected>Selecione</option>
-	    <option value="1">SEG</option>
-	    <option value="2">TER</option>
-	    <option value="3">QUA</option>
-	    <option value="4">QUI</option>
-	    <option value="5">SEX</option>
-	    <option value="6">SAB</option>
-	    <option value="7">DOM</option>
+	    <option value="SEG">SEG</option>
+	    <option value="TER">TER</option>
+	    <option value="QUA">QUA</option>
+	    <option value="QUI">QUI</option>
+	    <option value="SEX">SEX</option>
+	    <option value="SAB">SAB</option>
+	    <option value="DOM">DOM</option>
 	  </select>
 	</div>    
   <div class="input-field col s3">
-    <input id="periodo" name="periodo" type="number" class="validate">
-    <label for="periodo">Quantidade de turnos</label>
+    <input id="quantTurnos" name="quantTurnos" type="number" class="validate">
+    <label for="quantTurnos">Quantidade de turnos</label>
   </div>
-  <div class="input-field col s3">
-    <input id="demanda" name="demanda" type="text" class="validate">
-    <label for="demanda">Duração do turno</label>
+  <div class="input-field col s2">
+    <input id="duracaoTurno" name="duracaoTurno" type="number" class="validate">
+    <label for="duracaoTurno">Duração do turno</label>
   </div>
-  <div class="input-field col s3">
-    <input id="" name="demanda" type="text" class="validate">
-    <label for="">Intervalo por turno</label>
+  <div class="input-field col s2">
+    <input id="intervaloTurno" name="intervaloTurno" type="number" class="validate">
+    <label for="intervaloTurno">Intervalo por turno</label>
+  </div>
+  <div class="input-field col s2">
+    <input id="tempoSetup" name="tempoSetup" type="number" class="validate">
+    <label for="tempoSetup">Tempo de setup</label>
   </div>
   <div class="col s12">            
     <button class="btn waves-effect waves-light add">
       Adicionar
     </button>
   </div>
+</div>
+
+<div class="row">
+  <table class="striped highlight responsive-table" id="tabelaTurnos">
+    <thead>
+      <tr>
+          <th>Dia</th>
+          <th>Quant. turnos</th>
+          <th>Duração turno</th>
+          <th>Intervalo</th>
+          <th>Tempo setup</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- BODY da tabela -->
+    </tbody>
+    <tfoot style="font-weight: bold">
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <div class="row">
+    <div>
+      <p>Use unidades/dia</p>
+    </div>
+    <div class="col s6">
+        <div class="input-field col s12">
+          <input id="unidadesAtual" name="unidadesAtual" type="number" class="validate">
+          <label for="unidadesAtual">Produção atual</label>
+        </div>
+        <div>
+          <p id="ttAtual"></p>
+        </div>
+    </div>
+    <div class="col s6">
+      <div class="input-field col s12">
+        <input id="unidadesDesejada" name="unidadesDesejada" type="number" class="validate">
+        <label for="unidadesDesejada">Tempo de setup</label>
+      </div>
+      <div>
+          <p id="ttNovo"></p>
+        </div>
+    </div>
+  </div>
+  <div class="col s12"> 
+    <button class="btn waves-effect waves-light result">
+      Resultados
+    </button>          
+    <button class="btn waves-effect waves-light red clear">
+      Limpar
+    </button>
+  </div>
+
 </div>
