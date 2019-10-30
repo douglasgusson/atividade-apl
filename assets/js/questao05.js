@@ -46,7 +46,43 @@ $('.result').click(function() {
             '<li><b>A:</b> ' + a.toFixed(3) + '</li>' +
             '<li><b>R:</b> ' + r.toFixed(3) + '%</li>'
         );
-    
+
+    var ctx = document.getElementById('scatter');
+
+    var chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: makeLabels().labels,
+            datasets: [{
+                type: 'line',
+                label: 'Previsão',
+                data: makeLabels().labels,
+                fill: false,
+                backgroundColor: "rgba(218,83,79, .7)",
+                borderColor: "rgba(218,83,79, .7)",
+                pointRadius: 0
+            }, {
+                type: 'bubble',
+                label: 'Real',
+                data: makeBubbles().labels,
+                backgroundColor: "rgba(76,78,80, .7)",
+                borderColor: "transparent"
+            }]
+        },
+        options: {
+            scales: {
+                xAxes: [{
+                    type: 'linear',
+                    position: 'bottom',
+                    ticks: {
+                        autoSkip: true,
+                        max: Math.max(...makeLabels().arr)
+                    }
+                }],
+            }
+        }
+    });
+
 });
 
 
@@ -120,3 +156,28 @@ function calcularR() {
     r = numerador / Math.sqrt(aa * bb);    
     r = (Math.pow(r, 2) * 100.0);
 }
+
+
+function makeLabels() {
+    let arr = [];
+    for (let i = 0; i < dados.length; i++) {
+        arr.push(dados[i]['previsao']);
+    }
+    arr = arr.sort((a, b) => a - b);
+    let labels = arr.map(item => ({ x: item, y: item }));
+    return {
+        labels,
+        arr
+    };
+};
+
+
+function makeBubbles() {
+    let arr = [];
+    for (let i = 0; i < dados.length; i++) {
+        arr.push(dados[i]['y']);
+    }
+    let lineLabels = makeLabels().arr
+    let labels = arr.map((item, i) => ({ x: lineLabels[i], y: item }))
+    return { labels, arr };
+};
