@@ -1,0 +1,86 @@
+---
+layout: default
+title: Questão 03
+permalink: /questao-03/
+scritp_questao: 'questao03.js'
+---
+
+<div class="row">
+    <div class="input-field col s4">
+        <input id="s3" name="ccp" type="number" />
+        <label>Custo de Colocação do Pedido (R$)</label>
+    </div>
+    <div class="input-field col s4">
+        <input id="s1" name="cro" type="number" />
+        <label for="s1">Custo de Risco de Obsolecência (%)</label>
+    </div>
+    <div class="input-field col s4">
+        <input id="s2" name="ta" type="number" />
+        <label>Taxa de Armazenamento (%)</label>
+    </div>
+    <div class="col s12">
+        <button class="btn waves-effect waves-light add">Adicionar</button>
+    </div>
+</div>
+
+<div class="row">
+    <table class="striped highlight responsive-table" id="tabelaA">
+        <thead>
+            <tr>
+                <th>Custo de Colocação do Pedido</th>
+                <th>Custo de Risco de Obsolecência</th>
+                <th>Taxa de Armazenamento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- BODY da tabela -->
+        </tbody>
+    </table>
+</div>
+
+<div class="row">
+    <p>Ponto de Reposição</p>
+    <div class="input-field col s3">
+        <input id="demanda" name="demanda" type="number" />
+        <label for="demanda">Demanda Anual</label>
+    </div>
+    <div class="input-field col s3">
+        <input id="diasAno" name="diasAno" type="number" />
+        <label for="diasAno">Dias do ano</label>
+    </div>
+    <div class="input-field col s3">
+        <input id="leadTime" name="leadTime" type="number" />
+        <label for="leadTime">Lead Time (dias)</label>
+    </div>
+    <div class="input-field col s3">
+        <input id="custoUnitario" name="custoUnitario" type="number" />
+        <label for="custoUnitario">Custo Unitário</label>
+    </div>
+    <div class="col s12">
+        <button class="btn waves-effect waves-light result">Calcular</button>
+    </div>
+</div>
+
+<div class="col">
+    <h3>Resultados</h3>
+</div>
+
+<div class="row">
+    <table class="striped highlight responsive-table" id="tabelaB">
+        <thead>
+            <tr>
+                <th>Custo de Colocação do Pedido</th>
+                <th>Custo de Risco de Obsolecência</th>
+                <th>Taxa de Armazenamento</th>
+                <th>Lote Econômico</th>
+                <th>Custo Total</th>
+                <th>Número de Ciclos</th>
+                <th>Tempo de Ciclo</th>
+                <th>Ponto de Reposição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- BODY da tabela -->
+        </tbody>
+    </table>
+</div>
